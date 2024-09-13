@@ -36,16 +36,18 @@ header .container {
 
 .logo-link {
     display: inline-block;
+    margin-right: 20px;
 }
 
 .logo {
-    height: 40px;
+    height: 60px;
     width: auto;
 }
 
 nav {
+    flex-grow: 1;
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 .nav-toggle {
@@ -61,17 +63,20 @@ nav {
 .nav-menu {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-menu li {
-    margin-left: 2rem;
+    margin: 0 0.75rem;
 }
 
 .nav-menu a {
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-menu a:hover,
@@ -80,7 +85,7 @@ nav {
 }
 
 main {
-    padding: 80px 0 20px;
+    padding: 100px 0 20px;
 }
 
 section {
@@ -105,6 +110,10 @@ footer {
 @media screen and (max-width: 768px) {
     .nav-toggle-label {
         display: block;
+    }
+
+    nav {
+        justify-content: flex-end;
     }
 
     .nav-menu {
@@ -133,6 +142,6 @@ footer {
     }
 
     .logo {
-        height: 30px;
+        height: 50px;
     }
 }
