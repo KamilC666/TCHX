@@ -1,28 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    navToggle.addEventListener('change', function() {
+        if (this.checked) {
+            navMenu.style.display = 'flex';
+        } else {
+            navMenu.style.display = 'none';
+        }
+    });
+
     const navLinks = document.querySelectorAll('nav ul li a');
-    const sections = document.querySelectorAll('main section');
-
-    function setActiveLink() {
-        let index = sections.length;
-
-        while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
-        
-        navLinks.forEach((link) => link.classList.remove('active'));
-        navLinks[index].classList.add('active');
-    }
-
-    setActiveLink();
-    window.addEventListener('scroll', setActiveLink);
-
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            let targetId = this.getAttribute('href');
-            let targetSection = document.querySelector(targetId);
-            window.scrollTo({
-                top: targetSection.offsetTop - 70,
-                behavior: 'smooth'
-            });
+        link.addEventListener('click', () => {
+            navToggle.checked = false;
+            navMenu.style.display = 'none';
         });
     });
 });
