@@ -23,7 +23,8 @@ body {
   
   /* Logo */
   .logo img {
-    width: 120px;
+    height: 60px;
+    width: auto;
   }
   
   /* Nawigacja */
